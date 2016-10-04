@@ -1,5 +1,21 @@
 # Pine64LinuxLCD
-Process to get Playbox LCD working on Pine64.
+
+If all you want is to get the playbox LCD working on your pine 64, Open a terminal and enter the following commands.
+
+<code>cd /boot/pine64</code>
+
+<code>sudo wget https://github.com/MackPI/Pine64LinuxLCD/raw/master/sun50i-a64-pine64-plus.dtb</code>
+
+<code>sudo systemctl disable sunxi-disp-tool</code>
+
+Then reboot and the LCD should start working. ( This is not tested on non plus boards )
+
+The last command isn't needed on the Ubuntu image. On the Debian Images, re-enable the HDMI output with:
+
+<code>sudo systemctl enable sunxi-disp-tool</code>
+
+
+##Process to get Playbox LCD working on Pine64.
 
 I have the Playbox LCD working on xfce debian running on the 3.10.102-3-pine64-longsleep kernel running on a 2GB Pine64+
 
@@ -47,9 +63,15 @@ I recompiled the dtb file and copied it back into /boot/pine64.
 
 This far got me scrolling text on boot but the screen would go black before the login prompt with HDMI still working.
 
-Next I edited /etc/systemd/system/sysinit.target.wants/sunxi-disp-tool.service
+~~Next I edited /etc/systemd/system/sysinit.target.wants/sunxi-disp-tool.service~~
 
-<code>sudo mousepad /etc/systemd/system/sysinit.target.wants/sunxi-disp-tool.service</code>
+~~sudo mousepad /etc/systemd/system/sysinit.target.wants/sunxi-disp-tool.service~~
 
-I commented out the lines that did something. Which is everything but the section headers
-Putting a # on every line should work.  I used comments because I want to eventually get both LCD and HDMI working at the same time
+~~I commented out the lines that did something. Which is everything but the section headers
+Putting a # on every line should work.  I used comments because I want to eventually get both LCD and HDMI working at the same time~~
+
+Easier way to do the same thing
+
+<code>sudo systemctl disable sunxi-disp-tool</code>
+
+Then reboot and LCD works HDMI does not. Touch is not working either.
