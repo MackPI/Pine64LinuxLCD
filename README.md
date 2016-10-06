@@ -5,7 +5,7 @@ If all you want is to get the playbox LCD working on your pine 64, Open a termin
 cd /boot/pine64
 mkdir ~/dtb-backup
 cp /boot/pine64/*.dtb ~/dtb-backup
-sudo wget https://github.com/MackPI/Pine64LinuxLCD/raw/master/sun50i-a64-pine64-plus.dtb
+sudo wget -O sun50i-a64-pine64-plus.dtb https://github.com/MackPI/Pine64LinuxLCD/raw/master/sun50i-a64-pine64-plus.dtb
 sudo systemctl disable sunxi-disp-tool
 ```
 
