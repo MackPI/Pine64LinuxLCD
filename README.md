@@ -1,6 +1,6 @@
 # Pine64LinuxLCD
 
-If all you want is to get the playbox LCD working on your pine 64, Open a terminal and enter the following commands.
+If all you want is to get the playbox LCD working on your pine 64, Open a terminal and enter the following commands. ##This does not work with the DRM kernel.
 ```
 cd /boot/pine64
 mkdir ~/dtb-backup
